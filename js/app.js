@@ -1,43 +1,33 @@
-var BB = require('backbone'),
-    _ = require('underscore')
+var $ = require('jquery'),
+    _ = require('underscore'),
+    Backbone = require('backbone'),
+    React = require('react'),
+    R = require('./reactComponents.jsx')
 
-export default BB.Router.extend({
+var Router = Backbone.Router.extend({
     initialize() {
-        this.testView = new testView()
-        this.testModel = new testModel()
-        BB.history.start()
+        console.log(React)
+        Backbone.history.start()
     },
     routes: {
         '*default': 'home'
     },
-    home() {
-        this.testView.render()
+
+    home() {     
+        var myComponent = React.render(
+            < R.Message />,  document.body, function(){console.log('++ post render')} 
+        )
+
+
+        setTimeout(function(){
+            console.log('heeeyoooh!')
+            console.log(R.Message)
+            
+            myComponent.setState({
+                isVisible: false
+            })
+        }, 5000)
     }
 })
 
-var testView = BB.extend({
-    el: '.container',
-    initialize() {
-
-    },
-    events: {
-
-    },
-    render() {
-        this.el.innerHTML = this.template({ name: 'Matt' })
-    },
-    template: _.template(
-        `Here's a multiline string.
-        <h1><%= name %></h1>
-        <p>and some other stuff?</p>`
-    )
-})
-
-var testModel = BB.Model.extend({
-    url: "/",
-    initialize() {
-        this.fetch().then((data) => {
-            console.log(data)
-        })
-    }
-})
+export default Router
