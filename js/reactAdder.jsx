@@ -1,8 +1,5 @@
 var React = require('react')
 
-var OutsideObject = {
-
-}
 
 var App = React.createClass({
 
@@ -13,7 +10,7 @@ var App = React.createClass({
 		}
 	},
 
-	makeChange: function(refName, val){
+	makeStateChange: function(refName, val){
 		console.log('----------------------')
 		console.log('appppp level lthissener')
 
@@ -50,16 +47,16 @@ var App = React.createClass({
 })
 
 var PaymentInput = React.createClass({
-	invoke_makeChange: function(evt){
+	captureValuee: function(evt){
 
 		var propsRefName = this.props.refName
 		var capturedValue = this.refs[propsRefName].getDOMNode().value
-		this.props.handleChange(this.props.refName, capturedValue)
+		this.props.makeSateChange(this.props.refName, capturedValue)
 	},
 
 	render: function(){
 		return (
-			<input type="text" value={this.props.value} onChange={this.invoke_makeChange} ref={this.props.refName}/>
+			<input type="text" value={this.props.value} onChange={this.captureValues} ref={this.props.refName}/>
 		)
 	}
 })
