@@ -13,15 +13,10 @@ var App = React.createClass({
 		}
 	},
 
-	makeChange: function(refName, val){
-		console.log('----------------------')
-		console.log('appppp level lthissener')
-
-		console.log(refName)
-
+	makeChange: function(componentName, val){
 		this.setState({
-			amount1: refName==="amount1" ? val : this.state.amount1 ,
-			amount2: refName==="amount2" ? val : this.state.amount2
+			amount1: componentName==="input_amount1" ? val : this.state.amount1 ,
+			amount2: componentName==="input_amount2" ? val : this.state.amount2
 			})
 	},
 
@@ -39,8 +34,8 @@ var App = React.createClass({
 
 		return (
 			<div>
-				<PaymentInput handleChange = {this.makeChange} refName={"amount" + (++amt)}/> 
-				<PaymentInput handleChange = {this.makeChange} refName={"amount" + (++amt)}/> 
+				<PaymentInput handleChange = {this.makeChange} componentName={"input_amount1"}/> 
+				<PaymentInput handleChange = {this.makeChange} componentName={"input_amount2"}/> 
  				<hr/>
  				<PaymentOutput totalAmt = {totalOfBoth} />
 			</div>
@@ -51,15 +46,15 @@ var App = React.createClass({
 
 var PaymentInput = React.createClass({
 	invoke_makeChange: function(evt){
-
-		var propsRefName = this.props.refName
+		var propsRefName = this.props.componentName
 		var capturedValue = this.refs[propsRefName].getDOMNode().value
-		this.props.handleChange(this.props.refName, capturedValue)
+		console.log(capturedValue)
+		this.props.handleChange(this.props.componentName, capturedValue)
 	},
 
 	render: function(){
 		return (
-			<input type="text" value={this.props.value} onChange={this.invoke_makeChange} ref={this.props.refName}/>
+			<input type="text" value={this.props.value} onChange={this.invoke_makeChange} ref={this.props.componentName}/>
 		)
 	}
 })
