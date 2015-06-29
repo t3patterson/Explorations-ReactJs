@@ -47,7 +47,7 @@ var App = React.createClass({
 })
 
 var PaymentInput = React.createClass({
-	captureValuee: function(evt){
+	captureValue: function(evt){
 
 		var propsRefName = this.props.refName
 		var capturedValue = this.refs[propsRefName].getDOMNode().value
