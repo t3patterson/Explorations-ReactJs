@@ -1,8 +1,5 @@
 var React = require('react')
 
-var OutsideObject = {
-
-}
 
 var App = React.createClass({
 

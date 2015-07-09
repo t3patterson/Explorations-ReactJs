@@ -4,6 +4,8 @@ var $ = require('jquery'),
     React = require('react'),
     AddApp = require('./reactComponentMixin.jsx');
 
+import NotificationComponent from './notification-system.js'
+import {DatePickerComponent} from './datepicker.js'
 
 
 var Router = Backbone.Router.extend({
@@ -11,11 +13,13 @@ var Router = Backbone.Router.extend({
         Backbone.history.start()
     },
     routes: {
+        'react-datepicker': 'reactDatepicker',
+        'react-notification-system': 'reactNotification',
         '*default': 'home'
     },
 
     home: function() { 
-
+        window.location.hash = ""
          var theMsg= "these are props passed in";
          
 
@@ -23,7 +27,22 @@ var Router = Backbone.Router.extend({
             <AddApp />,
             document.querySelector('.container')
         )
-    }
+    },
+
+    reactNotification: function(){
+        console.log('hiiiie')
+        React.render(
+            <NotificationComponent/>,
+            document.querySelector('.container')
+        )
+    },
+
+    reactDatepicker: function(){
+        React.render(
+            <DatePickerComponent/>,
+            document.querySelector('.container')
+            )
+    },
 })
 
 export default Router
