@@ -1,7 +1,8 @@
 
 @import "../bower_components/normalize-css/normalize.css";
 @import "../bower_components/typeplate-starter-kit/css/typeplate.css";
-
+@import "../node_modules/react-datepicker/dist/react-datepicker.min.css";
+@import  "../node_modules/react-select/dist/default.css"
 /**
  * BOX-SIZING
  */
@@ -88,3 +89,16 @@ img {
 /**
  * YOUR CODE HERE
  */
+
+.date-picker-ex,
+.select-react,
+.notification {
+    position: fixed;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-50%);
+}
+
+.select-react{
+    width : 200px;
+}
