@@ -85,6 +85,10 @@
  * GENERAL
  */
 
+body{
+    font-family: 'Palatino', 'Georgia','serif'
+}
+
 img {
     max-width: 100%;
 }
@@ -108,4 +112,29 @@ img {
 .tnail{
     width: 50px;
     height: 50px;
+}
+
+.homepage{
+    position: fixed;
+    top:20%;
+    left: 50%;
+    transform: translateX(-50%);
+    ul{
+        list-style-type: none;
+        font-family: "Helvetica Neue","Helvetica",sans-serif;   
+        
+        li{
+            
+        }
+    
+    }
+
+    a{
+        display: block;
+        text-decoration: none;
+    }
+}
+
+hr {
+    margin-bottom: 1rem;
 }

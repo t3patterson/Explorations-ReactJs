@@ -21,6 +21,8 @@ export var SelectComponent = React.createClass({
 	render: function(){
 		return (
 			<div className="select-react">
+			<h3>React Select</h3>
+			<hr/>
 			<Select
 			    name="form-field-name"
 			    value={this.props.defaultVal}

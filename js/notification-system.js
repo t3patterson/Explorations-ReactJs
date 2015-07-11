@@ -18,8 +18,8 @@ export var NotificationComponent = React.createClass({
 
   render: function()  {
     return (
-      <div className="notification">
-        <button onClick={this._addNotification}>Add notification</button>
+      <div>
+        <button onClick={this._addNotification} className="notification">Add notification</button>
         <NotificationSystem ref="notificationSystem" />
       </div>
       );

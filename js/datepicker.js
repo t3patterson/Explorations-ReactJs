@@ -28,6 +28,8 @@ export var DatePickerComponent = React.createClass({
   render: function() {
       return (
     	<div className="date-picker-ex">
+        <h3>Date Picker</h3>
+        <hr/>
 	      <DatePicker
 		        key="example1"
 		        selected={this.state.start_date}

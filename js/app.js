@@ -4,14 +4,12 @@ var $ = require('jquery'),
     React = require('react'),
     AddApp = require('./reactComponentMixin.jsx');
 
+import {HomePage} from './home-component.js'
 import {NotificationComponent} from './notification-system.js'
 import {DatePickerComponent} from './datepicker.js'
 import {SelectComponent} from './r-select.js'
 import {MyDataTable} from './fixed-data-table.js'
-
-
-
-
+import {SimpleMapPage} from './google-map.js'
 
 var Router = Backbone.Router.extend({
     initialize: function() {
@@ -19,9 +17,10 @@ var Router = Backbone.Router.extend({
     },
 
     routes: {
+        'google-maps': 'googleMaps',
         'fixed-data-table': 'fixedTable',
         'react-select': 'reactSelect',
-        'react-datepicker': 'reactDatepicker',
+        'react-date-picker': 'reactDatepicker',
         'react-notification-system': 'reactNotification',
         '*default': 'home'
     },
@@ -32,7 +31,7 @@ var Router = Backbone.Router.extend({
          
 
          React.render(
-            <AddApp />,
+            <HomePage />,
             document.querySelector('.container')
         )
     },
@@ -79,10 +78,10 @@ var Router = Backbone.Router.extend({
             return $.getJSON(`https://api.github.com/users/${user}`)
         }
         var users = [
-            'APartingGlass',
+            'gaearon',
             'cjros',
             't3patterson',
-            'paulesaad',
+            'istarkov',
             'matthiasak'
         ]
 
@@ -114,6 +113,13 @@ var Router = Backbone.Router.extend({
                     document.querySelector('.container')
                     )
             })
+    },
+
+    googleMaps: function(){
+        React.render(
+            <SimpleMapPage/>,
+            document.querySelector('.container')
+            )
     }
 })
 
