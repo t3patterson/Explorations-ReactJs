@@ -10,6 +10,8 @@ import {DatePickerComponent} from './datepicker.js'
 import {SelectComponent} from './r-select.js'
 import {MyDataTable} from './fixed-data-table.js'
 import {SimpleMapPage} from './google-map.js'
+import {WaypointExample} from './waypoints.js'
+
 
 var Router = Backbone.Router.extend({
     initialize: function() {
@@ -17,6 +19,7 @@ var Router = Backbone.Router.extend({
     },
 
     routes: {
+        'waypoints': 'waypoints',
         'google-maps': 'googleMaps',
         'fixed-data-table': 'fixedTable',
         'react-select': 'reactSelect',
@@ -118,6 +121,13 @@ var Router = Backbone.Router.extend({
     googleMaps: function(){
         React.render(
             <SimpleMapPage/>,
+            document.querySelector('.container')
+            )
+    },
+
+    waypoints: function(){
+        React.render(
+            <WaypointExample/>,
             document.querySelector('.container')
             )
     }

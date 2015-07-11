@@ -8,7 +8,9 @@ export class HomePage extends React.Component{
 			{route: "fixed-data-table", title: "Data Table"},
 			{route: "react-select", title: "React Select"},
 			{route: "react-date-picker", title: "Date Picker"},
-			{route: "react-notification-system",title: "Notification System"}
+			{route: "react-notification-system",title: "Notification System"},
+			{route: "waypoints", title: "Scroll Waypoint"}
+
 		]
 	}
 

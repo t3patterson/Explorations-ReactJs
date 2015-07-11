@@ -1,0 +1,53 @@
+.basic-example {
+  border: solid 1px #cecece;
+  position: relative;
+}
+
+.basic-example__scrollable-parent {
+  max-height: 500px;
+  max-height: 100vh;
+  overflow: scroll;
+  position: relative;
+}
+
+.basic-example__spacer {
+  color: #ccc;
+  font-size: 40px;
+  line-height: 200px;
+  text-align: center;
+}
+
+.basic-example__spacer:before {
+  content: '▼';
+}
+
+.basic-example__waypoint-line {
+  border-top: 1px dashed red;
+}
+
+.change_element{
+    opacity: 0.5;
+    pointer-events: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all .3;
+    background-color: #6cf;
+    bottom: -278px;
+    transition: all .3s;
+
+  &.outside{
+    background-color: #999;
+    bottom: -278px;
+    transition: all .3s;
+    }
+
+  &.inside{
+      background-color: #383;
+      bottom: 0px;
+      transition: all .3s;
+
+  }
+}
+
