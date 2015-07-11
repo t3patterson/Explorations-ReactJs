@@ -7,6 +7,11 @@ var $ = require('jquery'),
 import {NotificationComponent} from './notification-system.js'
 import {DatePickerComponent} from './datepicker.js'
 import {SelectComponent} from './r-select.js'
+import {MyDataTable} from './fixed-data-table.js'
+
+
+
+
 
 var Router = Backbone.Router.extend({
     initialize: function() {
@@ -14,6 +19,7 @@ var Router = Backbone.Router.extend({
     },
 
     routes: {
+        'fixed-data-table': 'fixedTable',
         'react-select': 'reactSelect',
         'react-datepicker': 'reactDatepicker',
         'react-notification-system': 'reactNotification',
@@ -60,6 +66,54 @@ var Router = Backbone.Router.extend({
             <SelectComponent options={myOptions} defaultVal='tx'/>,
             document.querySelector('.container')
         )
+    },
+
+    fixedTable: function(){
+        React.render(
+            <MyDataTable/>,
+            document.querySelector('.container')
+            )
+
+        var getUserGHProfile = function(user){
+            console.log(`https://api.github.com/users/${user}`)
+            return $.getJSON(`https://api.github.com/users/${user}`)
+        }
+        var users = [
+            'APartingGlass',
+            'cjros',
+            't3patterson',
+            'paulesaad',
+            'matthiasak'
+        ]
+
+        var getRequestsBatch = users.map(function(user){
+            return getUserGHProfile(user)
+        })
+
+        $.when.apply($,getRequestsBatch)
+            .then(function(){
+                var slice = Array.prototype.slice;
+                console.log(arguments);
+                var argsArray = slice.call(arguments);
+
+                var userDataProps = argsArray.map(function(userData){
+                    return [
+                        userData[0].avatar_url,
+                        userData[0].login,
+                        userData[0].name,
+                        userData[0].location,
+                        userData[0].followers,
+                        userData[0].following
+                    ]
+                })
+
+                console.log(userDataProps)
+
+                React.render(   
+                    <MyDataTable rows={userDataProps} />,
+                    document.querySelector('.container')
+                    )
+            })
     }
 })
 

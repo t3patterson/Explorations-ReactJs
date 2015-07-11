@@ -2,7 +2,9 @@
 @import "../bower_components/normalize-css/normalize.css";
 @import "../bower_components/typeplate-starter-kit/css/typeplate.css";
 @import "../node_modules/react-datepicker/dist/react-datepicker.min.css";
-@import  "../node_modules/react-select/dist/default.css"
+@import  "../node_modules/react-select/dist/default.css";
+@import  "../node_modules/fixed-data-table/dist/fixed-data-table.css";
+
 /**
  * BOX-SIZING
  */
@@ -101,4 +103,9 @@ img {
 
 .select-react{
     width : 200px;
+}
+
+.tnail{
+    width: 50px;
+    height: 50px;
 }
