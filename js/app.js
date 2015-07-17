@@ -12,6 +12,8 @@ import {MyDataTable} from './fixed-data-table.js'
 import {GoogleMapMarked} from './google-map.js'
 import {WaypointExample} from './waypoints.js'
 import {SortableArea} from './sortable.js'
+import {FullPageView} from './parent-child-relations.js'
+
 
 var Router = Backbone.Router.extend({
     initialize: function() {
@@ -19,8 +21,8 @@ var Router = Backbone.Router.extend({
     },
 
     routes: {
-        'sandbox/parent-child','sandbox1',
-        'infinte-scroll', 'infiniteScroll',
+        'sandbox/parent-child':'sandbox1',
+        'infinte-scroll': 'infiniteScroll',
         'sortable': 'sortable',
         'waypoints': 'waypoints',
         'google-maps': 'googleMaps',
@@ -157,7 +159,11 @@ var Router = Backbone.Router.extend({
     },
 
     sandbox1: function(){
-        console.log('sandbox1')
+        React.render(
+            <FullPageView/>,
+            document.querySelector('.container')
+            )
+
     }
 })
 
