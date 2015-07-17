@@ -9,9 +9,9 @@ import {NotificationComponent} from './notification-system.js'
 import {DatePickerComponent} from './datepicker.js'
 import {SelectComponent} from './r-select.js'
 import {MyDataTable} from './fixed-data-table.js'
-import {SimpleMapPage} from './google-map.js'
+import {GoogleMapMarked} from './google-map.js'
 import {WaypointExample} from './waypoints.js'
-
+import {SortableArea} from './sortable.js'
 
 var Router = Backbone.Router.extend({
     initialize: function() {
@@ -19,6 +19,9 @@ var Router = Backbone.Router.extend({
     },
 
     routes: {
+        'sandbox/parent-child','sandbox1',
+        'infinte-scroll', 'infiniteScroll',
+        'sortable': 'sortable',
         'waypoints': 'waypoints',
         'google-maps': 'googleMaps',
         'fixed-data-table': 'fixedTable',
@@ -120,7 +123,7 @@ var Router = Backbone.Router.extend({
 
     googleMaps: function(){
         React.render(
-            <SimpleMapPage/>,
+            <GoogleMapMarked/>,
             document.querySelector('.container')
             )
     },
@@ -130,6 +133,31 @@ var Router = Backbone.Router.extend({
             <WaypointExample/>,
             document.querySelector('.container')
             )
+    },
+
+    sortable: function(){
+
+        var draggables = [
+            'apple',
+            'banana',
+            'peach',
+            'raspberry',
+            'plum',
+            'kiwi'
+        ];
+
+        React.render(
+            <SortableArea list={draggables}/>,
+            document.querySelector('.container')
+        )
+    },
+
+    infinteScroll: function(){
+        console.log('infinite scroll!');
+    },
+
+    sandbox1: function(){
+        console.log('sandbox1')
     }
 })
 

@@ -1,18 +1,7 @@
-import React from 'react'
-
 export class HomePage extends React.Component{ 
 	constructor(props){
 		super(props)
-		this.myComponents = [
-			{route: "google-maps", title:"Google Maps" },
-			{route: "fixed-data-table", title: "Data Table"},
-			{route: "react-select", title: "React Select"},
-			{route: "react-date-picker", title: "Date Picker"},
-			{route: "react-notification-system",title: "Notification System"},
-			{route: "waypoints", title: "Scroll Waypoint"},
-			{route: "sortable", title: "Drag/Drop List"}
-
-
+		
 		]
 	}
 

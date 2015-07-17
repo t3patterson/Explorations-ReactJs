@@ -1,0 +1,31 @@
+.sortable-list{
+	ol{
+		list-style-type: none;
+		width: 300px;
+		background: #eee;
+		cursor: grab;
+		padding: 0;
+
+		&:active{
+				cursor: grabbing
+			}
+
+		li{
+			margin-bottom: .5rem;
+			padding-left: .5rem;
+		}
+
+		li:nth-last-of-type(1){
+			margin-bottom: 0;	
+		}
+
+		li.sortable-enabled{
+			background: #FFD393;
+		
+		}
+
+		li.sortable-dragging{
+			background: #FF974F;
+		}
+	}
+}

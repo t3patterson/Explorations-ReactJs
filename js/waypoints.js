@@ -1,4 +1,4 @@
-//1) npm install 'react-waypoint'
+//1) npm install 'react-waypkoint'
 //2) import Waypoint from 'react-waypoint'
 //3) convert to ES6 module syntax
 //4) import 'basic.css' from:  https://github.com/brigade/react-waypoint/blob/gh-pages/styles/examples/basic.css

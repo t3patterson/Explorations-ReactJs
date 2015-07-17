@@ -96,6 +96,11 @@ img {
  * YOUR CODE HERE
  */
 
+.container{
+    position: relative;
+}
+
+.sortable-list,
 .date-picker-ex,
 .select-react,
 .notification {
@@ -160,4 +165,10 @@ hr {
     margin-bottom: 1rem;
 }
 
-@import "./i-waypoint.scss"
+.map-container{
+    height: 400px;
+}
+
+@import "./i-waypoint.scss";
+@import "./i-sortable.scss";
+
