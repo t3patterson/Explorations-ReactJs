@@ -10,7 +10,8 @@ export class HomePage extends React.Component{
 			{route: "react-date-picker", title: "Date Picker"},
 			{route: "react-notification-system",title: "Notification System"},
 			{route: "waypoints", title: "Scroll Waypoint"},
-			{route: "sortable", title: "Drag/Drop List"}
+			{route: "sortable", title: "Drag/Drop List"},
+			{route: "parallax", title: "Parallax Components"}
 
 
 		]

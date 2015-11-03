@@ -13,6 +13,7 @@ import {GoogleMapMarked} from './google-map.js'
 import {WaypointExample} from './waypoints.js'
 import {SortableArea} from './sortable.js'
 import {FullPageView} from './parent-child-relations.js'
+import {TheParallaxInstance} from './parallax-components.js'
 
 
 var Router = Backbone.Router.extend({
@@ -23,6 +24,7 @@ var Router = Backbone.Router.extend({
     routes: {
         'sandbox/parent-child':'sandbox1',
         'infinte-scroll': 'infiniteScroll',
+        'parallax': 'parallax',
         'sortable': 'sortable',
         'waypoints': 'waypoints',
         'google-maps': 'googleMaps',
@@ -154,16 +156,24 @@ var Router = Backbone.Router.extend({
         )
     },
 
+    parallax: function(){
+        React.render(
+            <TheParallaxInstance/> ,
+            document.querySelector('.container')
+        )
+    },
+
     infinteScroll: function(){
         console.log('infinite scroll!');
     },
+
+
 
     sandbox1: function(){
         React.render(
             <FullPageView/>,
             document.querySelector('.container')
             )
-
     }
 })
 
