@@ -11,7 +11,7 @@ export class HomePage extends React.Component{
 			{route: "react-notification-system",title: "Notification System"},
 			{route: "waypoints", title: "Scroll Waypoint"},
 			{route: "sortable", title: "Drag/Drop List"},
-			{route: "parallax", title: "Parallax Components"}
+			{route: "parallax", title: "Parallax Scroll"}
 
 
 		]

@@ -25,12 +25,12 @@ var ParallaxFodder = React.createClass({
 	    return {
 	      blockStyles: {
 	      	width: '300px',
-	      	margin: "240px auto",
-	      	padding: '10px',
+          paddingTop: '200px',
+	      	margin: "auto",
 	       	color: 'white',
 	       	textAlign: 'center', 
 	       	fontFamily: 'Helvetica',
-	       	background: "rgba(100,100,100,.5)"
+
 	      } 
 	    };
 	},
@@ -38,8 +38,12 @@ var ParallaxFodder = React.createClass({
 		var styles = { 
 			}
 		return <div style = {this.state.blockStyles} >
-			<h3 style={{color:'white'}}>{this.props.hdr}</h3>
-			<p>{this.props.msg}</p>
+			<div style ={ { padding: '10px',
+                    background: "rgba(100,100,100,.5)"
+      } }>
+        <h3 style={{color:'white'}}>{this.props.hdr}</h3>
+  			<p>{this.props.msg}</p>
+      </div>
 		</div>
 	}
 })
@@ -172,7 +176,7 @@ var ParallaxComponent = React.createClass({
         	parallaxBackStyle: pxNewStyles
         })
 
-       } else if (this.state.style.transform !== "translateY(0)"){
+       } else if (this.state.parallaxBackStyle.transform !== "translateY(0)"){
           this.setState({
              parallaxBackStyle: {transform: "translateY(0)"}
           })
